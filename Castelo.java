@@ -1,4 +1,4 @@
-package Projetinhos.RPG;
+package RPG;
 
 public class Castelo {
     public static void mostrar(){

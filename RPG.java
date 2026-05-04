@@ -1,5 +1,4 @@
-package Projetinhos.RPG;
-
+package RPG;
 import java.io.IOException;
 import java.util.Scanner;
 

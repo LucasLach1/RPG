@@ -1,4 +1,4 @@
-package Projetinhos.RPG;
+package RPG;
 
 public class Floresta {
     public static void mostrar() {

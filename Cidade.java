@@ -1,4 +1,4 @@
-package Projetinhos.RPG;
+package RPG;
 
 public class Cidade {
     public static void mostrar(){
