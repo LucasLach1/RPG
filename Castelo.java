@@ -1,11 +1,18 @@
 package RPG;
 
+import java.io.IOException;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class Castelo {
-    public static void mostrar(){
+    public static void mostrar() throws InterruptedException, IOException{
         System.out.println("Castelo abandonado :)");
-        String NomePersonagem = getNomePersonagem();
+        System.out.println("Ainda em desenvolvimento :)");
+        TimeUnit.SECONDS.sleep(1);
+        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+        Floresta florestaEnc = new Floresta();
+        Floresta.mostrar();
+        //String NomePersonagem = getNomePersonagem();
     }
     public static String getNomePersonagem() {
             Scanner Keys = new Scanner(System.in);
