@@ -12,9 +12,12 @@ public class RPG {
         int IntegridadeDoEscudo = 100;
         
         //Escolha do nome do personagem
+        /* 
         System.out.print("Digite o nome do seu personagem: ");
         String nomePersonagem = Keys.next();
+        */
         //System.out.println(nomePersonagem);
+        
         System.out.println("Escolha o local onde quer começar: ");
         System.out.println("1.Floresta Encantada");
         System.out.println("2.Cidade Metropolitana");
@@ -42,9 +45,12 @@ public class RPG {
             default:
                 break;
         }
+        
 
 
     }
+
+    
 
   
 }
