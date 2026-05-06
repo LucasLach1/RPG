@@ -12,7 +12,7 @@ public class Floresta {
         int vida = 100;
         int dano;
         //Testes
-        int d20;
+        int d20 = 0;
         int Sucess = 0;
         int SucessTest = 0;
         //Mochila
@@ -44,6 +44,7 @@ public class Floresta {
             }else{
                 System.out.println("Você não conseguiu");
                 System.out.println(d20);
+                apagarTela(1);
             }
         }
 
@@ -61,6 +62,7 @@ public class Floresta {
                 Sucess++;
             }
         }
+
         //Se os testes forem verdadeiros executa este bloco
        
         if(SucessTest == 1){
@@ -82,19 +84,32 @@ public class Floresta {
             System.out.print("Opção: ");
             opcao = Keys.nextInt();
         }
-
-        d20 = rolarD20();
-
+        if(opcao == 1){
+            d20 = rolarD20();
+        }
+        
         if(opcao == 1 && d20 >= 10){
             System.out.println("Você entra na porta da esquerda e acha uma arma no chão");
             System.out.println("E a pega");
             inventario.put("Arma 9mm", 1);
             inventario.put("Munição 9mm", 30);
-        }else{
-
+        }else if(opcao == 1 && d20<10){
+            System.out.println("Você achou 2 soldados bem na frente da porta e eles atiraram em você e te mataram");
         }
-        if(opcao == 2 && d20 >= 15){
-            
+        if(opcao == 2){
+            System.out.println("Você conseguiu entrar e achou uma escopeta você pega?");
+            System.out.println("1.Sim");
+            System.out.println("2.Não");
+            System.out.print("Opção: ");
+            opcao = Keys.nextInt();
+            if(opcao == 1){
+                inventario.put("Escopeta", 1);
+                inventario.put("Bala de 12mm", 30);
+                System.out.printf("%s conseguiu %s escopeta, com %d balas", NomePersonagem,inventario.get("Escopeta"), inventario.get("Bala de 12mm"));
+                
+            }else{
+                System.out.println("Você deixa a arma no chão");
+            }
         }else{
             
         }
