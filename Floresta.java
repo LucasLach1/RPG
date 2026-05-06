@@ -26,9 +26,11 @@ public class Floresta {
 
         System.out.println("Floresta fechada");
         String NomePersonagem = getNomePersonagem();
+        apagarTela(1);
+        System.out.println("O castelo guarda documentos que podem mudar o rumo da guerra. \nNinguém deveria entrar ali a segurança é rígida e qualquer intruso não sai vivo.\nMesmo assim, alguém precisa tentar. \nAgora, no coração do castelo, tudo depende de um único lance.\n");
         
         //System.out.println(NomePersonagem);
-        apagarTela(1);
+        apagarTela(3);
         System.out.println("Você vê na sua frente um castelo abandonado");
         System.out.println("O que vc faz? ");
         System.out.printf("1.Fazer um teste de percepção \n");
@@ -45,6 +47,7 @@ public class Floresta {
                 System.out.println("Você não conseguiu");
                 System.out.println(d20);
                 apagarTela(1);
+                opcao = 0;
             }
         }
 
@@ -55,7 +58,7 @@ public class Floresta {
 
                 System.out.println("Você foi avistado!");
                 System.out.println("E morto");
-
+                opcao = 0;
                 apagarTela(2);
             }else{
                 System.out.println("Você conseguiu entrar sorrateiramente");
@@ -97,6 +100,7 @@ public class Floresta {
             System.out.println("Você achou 2 soldados bem na frente da porta e eles atiraram em você e te mataram");
         }
         if(opcao == 2){
+            apagarTela(2);
             System.out.println("Você conseguiu entrar e achou uma escopeta você pega?");
             System.out.println("1.Sim");
             System.out.println("2.Não");
@@ -104,19 +108,26 @@ public class Floresta {
             opcao = Keys.nextInt();
             if(opcao == 1){
                 inventario.put("Escopeta", 1);
-                inventario.put("Bala de 12mm", 30);
-                System.out.printf("%s conseguiu %s escopeta, com %d balas", NomePersonagem,inventario.get("Escopeta"), inventario.get("Bala de 12mm"));
+                inventario.put("Munição 12mm", 30);
+                System.out.printf("%s conseguiu %s escopeta, com %d balas ", NomePersonagem,inventario.get("Escopeta"), inventario.get("Munição 12mm"));
                 
             }else{
                 System.out.println("Você deixa a arma no chão");
             }
+        }
+        if(opcao == 3 && d20 >= 20 ){
+            System.out.println("Tudo aponta para o fracasso. O risco é total.\n" +  "Mas, no instante exato, cada movimento encaixa perfeitamente.\n" +  "O impossível acontece.\n" +  "20 no dado.");
         }else{
             
         }
-        if(opcao == 3 && d20 >= 20){
-            
-        }else{
-            
+
+        if(inventario.get("Escopeta") == 1 && inventario.get("Munição 12mm") >=1){
+            System.out.println("Aparece 3 capangas e você tem que mata-los antes que eles te vejam");
+            System.out.println("Atirar para todo o lado?");
+            System.out.println("1.Sim");
+            System.out.println("2.Não");
+            System.out.print("Opção: ");
+            opcao = Keys.nextInt();
         }
 
 
